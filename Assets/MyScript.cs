@@ -5,7 +5,7 @@ using UnityEngine;
 public class MyScript : MonoBehaviour
 {
     string text = "Hello world!";
-    [SerializeField] string myNme = "Tom";
+    [SerializeField] string myName = "Tom";
     public string myHomeTown = "Piteå";
 
     // Start is called before the first frame update
