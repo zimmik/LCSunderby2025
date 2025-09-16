@@ -12,6 +12,7 @@ public class MyScript : MonoBehaviour
     void Start()
     {
         //print(text);
+        print(myName);
         print("Hello world");
         Debug.Log(text); //Unity Debug Only
     }
