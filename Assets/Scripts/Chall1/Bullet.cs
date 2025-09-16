@@ -11,7 +11,9 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = Vector2.up * bulletSpeed;
+       // rb.velocity = Vector2.up * bulletSpeed;
+       // rb.velocity = Vector2.right * bulletSpeed;
+        rb.velocity = Vector2.left * bulletSpeed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
