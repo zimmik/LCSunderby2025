@@ -32,6 +32,7 @@ public class Health : MonoBehaviour
                 FindObjectOfType<Display>().GameOver();
                 //gameObject.SetActive(false);
             }
+            else Destroy(gameObject);
         }
     }
 }
