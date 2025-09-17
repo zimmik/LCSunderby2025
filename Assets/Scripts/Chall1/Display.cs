@@ -4,11 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Score : MonoBehaviour
+public class Display : MonoBehaviour
 {
     public int playerScore;
     public Text ScoreText;
+    public int keys;
+    public Text KeyText;
     public GameObject gameOverScreen;
+    public GameObject player;
 
     //Run function manually in 3dots icon on script in Unity
     //[ContextMenu("Increase Score")]

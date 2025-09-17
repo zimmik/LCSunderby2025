@@ -15,6 +15,7 @@ public class MoingPlatform : MonoBehaviour
         MovePlatform();
     }
 
+    //TODO: Move w rigidbody and physics instead of position
     void MovePlatform()
     {
         timer += Time.deltaTime * timerDir;
