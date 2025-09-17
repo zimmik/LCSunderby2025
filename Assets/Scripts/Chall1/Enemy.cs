@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] Transform edgeCheck;
+    [SerializeField] Transform wallCheck;
     [SerializeField] Transform groundCheck;
     [SerializeField] bool isGrounded = false;
     [SerializeField] Vector2 moveDir = Vector2.left;
@@ -23,7 +24,8 @@ public class Enemy : MonoBehaviour
     void Move()
     {
         GroundCheck();
-        EdgeCheck();        
+        EdgeCheck();
+        WallCheck();
         ApplyVelocity();
     }
 
@@ -49,26 +51,25 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    /*
     void WallCheck()
     {
+        //Check if there's a wall in the enemy's move direction
         if (!isGrounded)
         {
             return;
         }
         RaycastHit2D hit;
-        hit = Physics2D.Raycast(edgeCheck.position, Vector2.down, 0.1f, LayerMask.GetMask("Ground")); //Non costly w infinite raycast
-        Debug.DrawRay(groundCheck.position, Vector2.down * 0.1f, Color.red);
+        hit = Physics2D.Raycast(wallCheck.position, moveDir, 0.1f, LayerMask.GetMask("Ground")); //Non costly w infinite raycast
+        Debug.DrawRay(wallCheck.position, moveDir * 0.1f, Color.red);
 
-        bool foundEdge = hit.collider == null;
-        if (foundEdge && isGrounded)
+        if (hit.collider != null)
         {
             Vector3 newScale = transform.localScale;
             newScale.x *= -1.0f;
-           // inputDir *= -1.0f;
+            moveDir *= -1.0f;
             transform.localScale = newScale;
         }
-    }*/
+    }
     void GroundCheck()
     {
         // If LayerMask does´nt work, try NameToLayer
@@ -82,45 +83,6 @@ public class Enemy : MonoBehaviour
         bool groundIsDown = hit.collider != null;
 
         isGrounded = touchingGround && groundIsDown;
-    }
-
-    public void WallCheck()
-    {
-        //Check if ground on wall
-        //Vector2.right; // x1, y0
-        /*
-        float[] dirArray = { 1.0f, -1.0f };
-        foreach (float dir in dirArray)
-        {
-            RaycastHit2D hit2;
-            Vector3 rightOffset = Vector2.right * 0.5f * dir;
-            hit2 = Physics2D.Raycast(transform.position + rightOffset, Vector2.right * dir, 0.1f, LayerMask.GetMask("Ground")); //Non costly w infinite raycast
-            Debug.DrawRay(transform.position + rightOffset, Vector2.right * dir * 0.1f, Color.yellow);
-
-            isOnWall = hit2.collider != null;
-
-            if (isOnWall)
-            {
-                break;
-            }
-        }
-
-        float[] dirArray = { 1.0f, -1.0f };
-        foreach (float dir in dirArray)
-        {
-            RaycastHit2D hit2;
-            Vector3 dirOffset = dir * 0.5f;
-            hit2 = Physics2D.Raycast(transform.position + dirOffset, Vector2.right * dir, 0.1f, LayerMask.GetMask("Ground")); //Non costly w infinite raycast
-            Debug.DrawRay(transform.position + dirOffset, Vector2.right * dir * 0.1f, Color.yellow);
-
-            isOnWall = hit2.collider != null;
-
-            if (isOnWall)
-            {
-                break;
-            }
-        }
-        */
     }
 
     void ApplyVelocity()

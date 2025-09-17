@@ -6,15 +6,15 @@ public class PlayerShooting : MonoBehaviour
 {
 
     //TODO: CHECK 52.42, 1.03.10
-    //TODO: Wall
+    //TODO: 
     //TODO: Shoot Bullets Left or Right that Damage Enemies
     //TODO: Take Damage from Enemies
-    //TODO: Collect Items
+    //TODO: 
     //TODO: Enemyhit, oncollision or ontrigger
     //TODO: E: Damage Players on Touch
-    //TODO: A Door that is opened with the Key Item
-    //TODO: A Door that is opened with the Key Item
-    //TODO: A Door that is opened with the pressure plate (it may stay open)
+    //TODO: 
+    //TODO: 
+    //TODO: 
     //TODO: UI (User Interface) Showing Current Player Health or Score
     //TODO: A Game Over Screen
     //TODO: Om man har en prefabA i en prefabB och ändrar den i A, ändras det A i B oxå?
