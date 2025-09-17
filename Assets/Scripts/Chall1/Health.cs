@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] int maxHealth = 5;
-    int currentHealth = 5;
+    public int currentHealth = 5;
 
     void Start()
     {
@@ -13,17 +13,25 @@ public class Health : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        if (currentHealth <= damage)
+        {
+            currentHealth = 0;
+        }
+        else currentHealth -= damage;
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
-            //Gameover();
+            if (gameObject.tag == "Enemy")
+            {
+                gameObject.SetActive(false);
+                FindObjectOfType<Score>().AddScore(1);
+                //Gameover();
+            }
+            if (gameObject.tag == "Player")
+            {
+                FindObjectOfType<Display>().GameOver();
+                //gameObject.SetActive(false);
+            }
         }
-    }
-
-    public void Gameover()
-    {
-        
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] int enemyDamage = 1;
     [SerializeField] Transform edgeCheck;
     [SerializeField] Transform wallCheck;
     [SerializeField] Transform groundCheck;
@@ -93,5 +94,18 @@ public class Enemy : MonoBehaviour
         velocity.x = moveDir.x * movementSpeed;
         velocity.y = rb.velocity.y;
         rb.velocity = velocity;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Health targetHealth = collision.gameObject.GetComponent<Health>();
+            if (targetHealth != null)
+            {
+                targetHealth.TakeDamage(enemyDamage);
+                print("Bam");
+            }
+        }            
     }
 }
