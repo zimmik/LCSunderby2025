@@ -15,8 +15,8 @@ public class PlayerShooting : MonoBehaviour
     //TODO: 
     //TODO: 
     //TODO: 
-    //TODO: UI (User Interface) Showing Current Player Health or Score
-    //TODO: A Game Over Screen
+    //TODO: 
+    //TODO: 
     //TODO: Om man har en prefabA i en prefabB och ändrar den i A, ändras det A i B oxå?
     //TODO: Vad behöver man göra om man flyttar saker till andra mappar?
     //TODO: Objektet i hierarkin, om det dras till prefab, ändras bara objektet eller hela prefaben om man ändrar på objektet i hierarkin?
