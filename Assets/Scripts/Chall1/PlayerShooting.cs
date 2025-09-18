@@ -23,17 +23,38 @@ public class PlayerShooting : MonoBehaviour
     
     [SerializeField] Transform bulletSpawnPoint;
     [SerializeField] GameObject bulletPrefab;
+    float spawnOffset = 1.5f;
 
+    Player player;
+
+    void Start()
+    {
+        player = GetComponent<Player>();
+    }
     void Update()
     {
-        Shoot();
-    }
-    void Shoot()
-    {
-        if(Input.GetKeyDown(KeyCode.E)) //TODO key
+        Vector2 dir = player.shootDir;
+        if (dir != Vector2.zero) 
         {
-            print("Pew");
-            Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+            Vector2 point = dir.normalized * spawnOffset;
+            bulletSpawnPoint.localPosition = (point);
+        }
+        Shoot(dir);
+    }
+
+    void Shoot(Vector2 dir)
+    {
+        if(Input.GetKeyDown(KeyCode.E)) //TODO: input
+        {
+            print("Pew"); 
+            
+            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+            Bullet b = bullet.GetComponent<Bullet>();
+            b.SetDirection(dir); //b.Direction = dir;
+            print("Fire");
+            b.Fire();
+
+            print("End");
         }
     }
 }

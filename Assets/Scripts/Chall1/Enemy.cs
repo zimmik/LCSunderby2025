@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
         bool foundEdge = hit.collider == null;
         if (foundEdge)
         {
-            print("Found Edge");
+            //print("Found Edge");
             Vector3 newScale = transform.localScale;
             newScale.x *= -1.0f;
             moveDir.x *= -1.0f;

@@ -1550,11 +1550,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2274648783782532313, guid: b4a17c850b7ebfd48873cca2d25c366e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.91
+      value: -27
       objectReference: {fileID: 0}
     - target: {fileID: 2274648783782532313, guid: b4a17c850b7ebfd48873cca2d25c366e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.42
+      value: 0.78
       objectReference: {fileID: 0}
     - target: {fileID: 2274648783782532313, guid: b4a17c850b7ebfd48873cca2d25c366e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1798,6 +1798,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1724159646 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 158570565146713725, guid: 3bc0995b27ef78d459eea3f44d188b12, type: 3}
+  m_PrefabInstance: {fileID: 6610588555588311241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1757000165
 GameObject:
   m_ObjectHideFlags: 0
@@ -3047,7 +3052,7 @@ PrefabInstance:
     - target: {fileID: 7840115751275809195, guid: 3bc0995b27ef78d459eea3f44d188b12, type: 3}
       propertyPath: bulletSpawnPoint
       value: 
-      objectReference: {fileID: 1534790902}
+      objectReference: {fileID: 1724159646}
     - target: {fileID: 8560483634183262622, guid: 3bc0995b27ef78d459eea3f44d188b12, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3143,6 +3148,10 @@ PrefabInstance:
     - target: {fileID: 2370086437526294030, guid: 10dc9b0fce830374992be31ff3c4260e, type: 3}
       propertyPath: m_Name
       value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 2370086437526294030, guid: 10dc9b0fce830374992be31ff3c4260e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3442717888173642813, guid: 10dc9b0fce830374992be31ff3c4260e, type: 3}
       propertyPath: m_LocalPosition.x

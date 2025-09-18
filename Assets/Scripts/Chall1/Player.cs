@@ -7,8 +7,18 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] Transform groundCheck;
-
-    Vector2 moveDir = Vector2.zero;
+    private Vector2 _md = Vector2.zero;
+    public Vector2 moveDir {
+        get => _md; 
+        private set {
+            _md = value;
+            if (value != shootDir && value != Vector2.zero)
+            {
+                shootDir = value.normalized;
+            }
+        } 
+    }
+    public Vector2 shootDir { get; private set; } = Vector2.left;
     float movementSpeed = 10.0f;
     float jumpForce = 8.0f;
 
