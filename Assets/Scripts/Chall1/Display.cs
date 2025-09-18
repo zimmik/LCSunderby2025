@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+//using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Display : MonoBehaviour
 {
+    [SerializeField] private string nextScene;
     public int playerHealth;
     public Text HealthText;
     public int playerScore;
@@ -40,5 +42,14 @@ public class Display : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         gameOverScreen.SetActive(true);
+    }
+    public void SetScene(string scene)
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(scene);
+    }
+    public void NextScene()
+    {
+        SetScene(nextScene);
     }
 }

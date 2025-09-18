@@ -7,14 +7,10 @@ public class PlayerShooting : MonoBehaviour
 
     //TODO: CHECK 52.42, 1.03.10
     //TODO: 
-    //TODO: Shoot Bullets Left or Right that Damage Enemies
+    //TODO: 
     //TODO: Take Damage from Enemies
     //TODO: 
     //TODO: Enemyhit, oncollision or ontrigger
-    //TODO: E: Damage Players on Touch
-    //TODO: 
-    //TODO: 
-    //TODO: 
     //TODO: 
     //TODO: 
     //TODO: Om man har en prefabA i en prefabB och ändrar den i A, ändras det A i B oxå?
@@ -51,10 +47,7 @@ public class PlayerShooting : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
             Bullet b = bullet.GetComponent<Bullet>();
             b.SetDirection(dir); //b.Direction = dir;
-            print("Fire");
             b.Fire();
-
-            print("End");
         }
     }
 }

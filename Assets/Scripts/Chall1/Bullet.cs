@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] int bulletDamage = 1;
-    //[SerializeField]
     Vector2 direction;
     
     float bulletSpeed = 20.0f;
@@ -17,8 +16,6 @@ public class Bullet : MonoBehaviour
 
     public void SetDirection(Vector2 dir)
     {
-
-        print("set dir ");
         direction = dir.normalized;
     }
     void Start()
@@ -28,17 +25,14 @@ public class Bullet : MonoBehaviour
     public void Fire()
     {
         rb = GetComponent<Rigidbody2D>();
-        print("burn ");
         // rb.velocity = Vector2.up * bulletSpeed;
         // rb.velocity = Vector2.right * bulletSpeed;
         //rb.velocity = Vector2.left * bulletSpeed;
         if (direction == null)
         {
-            print("null " );
             direction = Vector2.up;
         }
         rb.velocity = direction * bulletSpeed;
-        print("vel " + rb.velocity + "   dir " + direction + "   bull " + bulletSpeed);
     }
 
 
