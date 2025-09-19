@@ -20,11 +20,13 @@ public class LogicScript : MonoBehaviour
 
     public void RestartGame()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void GameOver()
     {
+        Time.timeScale = 0.0f;
         gameOverScreen.SetActive(true);
     }
 }
