@@ -10426,6 +10426,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3341055797322626491, guid: 015ea5c05d877b446bb019958e63c943, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5431907806684347541, guid: 015ea5c05d877b446bb019958e63c943, type: 3}
       propertyPath: platePressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
