@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MiniChall1.unity
+    guid: 185f38d725d30884284a0e8e4554fa3f
+  - enabled: 1
+    path: Assets/Scenes/MiniChall1Scene2.unity
+    guid: 83ca4648aa8bfe64ca930f0f1351683d
   m_configObjects: {}
